@@ -380,7 +380,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 p-4 md:p-8 font-sans text-slate-800 flex justify-center items-start">
       <div className="max-w-5xl w-full bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-200">
         
-        <div className="bg-slate-900 text-white p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
+        <div className="bg-green-700 text-white p-6 md:p-8 flex flex-col md:flex-row justify-between items-start md:items-center">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold mb-2">Ukrainian National LLM Training Simulator</h1>
             <p className="text-slate-400 text-sm md:text-base">
@@ -525,19 +525,6 @@ export default function App() {
             </div>
           </div>
 
-          {/* Insights Panel */}
-          <div className="bg-slate-800 text-slate-200 rounded-xl p-5 text-sm leading-relaxed shadow-inner border border-slate-700">
-            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-xs border-b border-slate-600 pb-2">Live Infra Insights & Availability</h3>
-            <div className="space-y-4">
-              {generateInsights().map((insight, idx) => (
-                <div key={idx} className="flex items-start">
-                  <span className="mr-3 text-xl leading-none">{insight.icon}</span>
-                  <p className="text-slate-300 leading-snug">{insight.text}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-
           {/* Dashboard */}
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4 border-t border-slate-100">
             <div className="bg-white border border-slate-200 p-5 rounded-xl shadow-sm flex flex-col justify-center items-center text-center">
@@ -568,6 +555,19 @@ export default function App() {
                     ? 'Estimated from public pricing signal; still requires custom quote'
                     : 'Compute rental cost only'}
               </span>
+            </div>
+          </div>
+
+          {/* Insights Panel */}
+          <div className="bg-slate-800 text-slate-200 rounded-xl p-5 text-sm leading-relaxed shadow-inner border border-slate-700">
+            <h3 className="text-white font-bold mb-4 uppercase tracking-wider text-xs border-b border-slate-600 pb-2">Live Infra Insights & Availability</h3>
+            <div className="space-y-4">
+              {generateInsights().map((insight, idx) => (
+                <div key={idx} className="flex items-start">
+                  <span className="mr-3 text-xl leading-none">{insight.icon}</span>
+                  <p className="text-slate-300 leading-snug">{insight.text}</p>
+                </div>
+              ))}
             </div>
           </div>
 
