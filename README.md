@@ -10,11 +10,11 @@ An interactive cost and compute sandbox for planning large-language-model traini
 
 Drag the sliders, pick a cloud provider and GPU type, and the simulator instantly recalculates:
 
-| Output | What it means |
-|---|---|
-| **Total Tokens** | Dataset GB × 250 M tokens/GB × epochs |
-| **Compute Time** | Derived from hardware TFLOPS × MFU efficiency × cluster size |
-| **Est. Cloud Cost** | GPU/node-hours × public or inferred hourly price |
+| Output              | What it means                                                |
+| ------------------- | ------------------------------------------------------------ |
+| **Total Tokens**    | Dataset GB × 250 M tokens/GB × epochs                        |
+| **Compute Time**    | Derived from hardware TFLOPS × MFU efficiency × cluster size |
+| **Est. Cloud Cost** | GPU/node-hours × public or inferred hourly price             |
 
 A live **Insights panel** surfaces availability warnings, pricing basis notes, spot-viability flags, and scale-extrapolation alerts as you change settings.
 
@@ -22,37 +22,40 @@ A live **Insights panel** surfaces availability warnings, pricing basis notes, s
 
 ## Training modes
 
-| Mode | Weights | FLOPs/token | Typical use |
-|---|---|---|---|
-| **LoRA Fine-Tuning** | Frozen (adapter only) | 4 × 31 B = 124 B | Style / format adaptation |
-| **Continuous Pre-training** | All unfrozen | 6 × 31 B = 186 B | New language integration |
+| Mode                        | Weights               | FLOPs/token      | Typical use               |
+| --------------------------- | --------------------- | ---------------- | ------------------------- |
+| **LoRA Fine-Tuning**        | Frozen (adapter only) | 4 × 31 B = 124 B | Style / format adaptation |
+| **Continuous Pre-training** | All unfrozen          | 6 × 31 B = 186 B | New language integration  |
 
 ---
 
 ## Supported providers & hardware
 
 ### Google Cloud (Hypercomputer)
-| SKU | GPUs/node | TFLOPS | $/GPU-hr |
-|---|---|---|---|
-| H100 (A3 High) | 8 | 989.5 | $11.06 (on-demand) |
-| H200 (A3 Ultra) | 8 | 989.5 | $7.42 (DWS Calendar) |
-| B200 (A4) | 8 | 2 250 | $11.28 (DWS Calendar) |
-| GB200 (A4X) | 4 | 2 500 | ~$10.50 (proxy) |
-| GB300 (A4X Max) | 4 | 2 500 | Custom quote only |
+
+| SKU             | GPUs/node | TFLOPS | $/GPU-hr              |
+| --------------- | --------- | ------ | --------------------- |
+| H100 (A3 High)  | 8         | 989.5  | $11.06 (on-demand)    |
+| H200 (A3 Ultra) | 8         | 989.5  | $7.42 (DWS Calendar)  |
+| B200 (A4)       | 8         | 2 250  | $11.28 (DWS Calendar) |
+| GB200 (A4X)     | 4         | 2 500  | ~$10.50 (proxy)       |
+| GB300 (A4X Max) | 4         | 2 500  | Custom quote only     |
 
 ### Hugging Face (Jobs / Training Clusters)
-| SKU | GPUs/node | TFLOPS | $/GPU-hr |
-|---|---|---|---|
-| A100 (Jobs) | 8 | 312 | $2.50 |
-| H200 (Jobs) | 8 | 989.5 | $5.00 |
-| Custom Cluster | 8 | 989.5 | ~$8.25 (waitlist) |
+
+| SKU            | GPUs/node | TFLOPS | $/GPU-hr          |
+| -------------- | --------- | ------ | ----------------- |
+| A100 (Jobs)    | 8         | 312    | $2.50             |
+| H200 (Jobs)    | 8         | 989.5  | $5.00             |
+| Custom Cluster | 8         | 989.5  | ~$8.25 (waitlist) |
 
 ### DeepInfra (Instances / DeepCluster)
-| SKU | GPUs/node | TFLOPS | $/GPU-hr |
-|---|---|---|---|
-| B200 GPU Instance | 8 | 2 250 | $2.79 |
-| H100 Dedicated | 8 | 989.5 | $1.79 (sales req.) |
-| B300 Dedicated | 8 | 2 500 | $2.99 (3–5 yr term, 256+ GPUs) |
+
+| SKU               | GPUs/node | TFLOPS | $/GPU-hr                       |
+| ----------------- | --------- | ------ | ------------------------------ |
+| B200 GPU Instance | 8         | 2 250  | $2.79                          |
+| H100 Dedicated    | 8         | 989.5  | $1.79 (sales req.)             |
+| B300 Dedicated    | 8         | 2 500  | $2.99 (3–5 yr term, 256+ GPUs) |
 
 ---
 
